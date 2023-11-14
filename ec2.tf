@@ -1,17 +1,10 @@
-# Reference the AWS provider
 provider "aws" {
-  alias  = "ec2"
-  region = "ap-south-1"
+access_key = "AKIA4J4J2RVWHDPXPN4Z"
+secret_key = "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"
+region = "ap-south-1"
 }
-
-# Define the EC2 instance resource
-resource "aws_instance" "my_instance" {
-  provider = aws.ec2  # Use the aliased provider
-
-  ami           = "ami-02e94b011299ef128"
-  instance_type = "t2.micro"
-
-  tags = {
-    Name = "MyEC2Instance"
-  }
+ 
+resource "aws_instance" "terraform_demo" {
+ami = "ami-02e94b011299ef128"
+instance_type = "t2.micro"
 }
